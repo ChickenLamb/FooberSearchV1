@@ -43,7 +43,8 @@ function Assets() {
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsx(Content, { children: "ddddf" }),
     /* @__PURE__ */ jsx(Logo, {}),
-    /* @__PURE__ */ jsx(Button, { children: "This is a Button" })
+    /* @__PURE__ */ jsx(Button, { children: "This is a Button" }),
+    /* @__PURE__ */ jsx("input", { type: "text" })
   ] });
 }
 function Page() {

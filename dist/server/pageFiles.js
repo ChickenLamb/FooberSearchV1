@@ -35,7 +35,7 @@ const pageFilesExportNamesEager = {};
 const pageFilesList = [];
 const neverLoaded = {};
 const isGeneratedFile = true;
-const pageFilesLazyIsomorph1 = /* @__PURE__ */ Object.assign({ "/pages/about/index.page.tsx": () => import("./assets/about.page.2a0395aa.js"), "/pages/assets/index.page.tsx": () => import("./assets/assets.page.eeb9c8fd.js"), "/pages/index/index.page.tsx": () => import("./assets/index.page.9f2f757e.js"), "/renderer/_error.page.tsx": () => import("./assets/_error.page.4fa6da32.js") });
+const pageFilesLazyIsomorph1 = /* @__PURE__ */ Object.assign({ "/pages/about/index.page.tsx": () => import("./assets/about.page.2a0395aa.js"), "/pages/assets/index.page.tsx": () => import("./assets/assets.page.f72434f7.js"), "/pages/index/index.page.tsx": () => import("./assets/index.page.bba063a8.js"), "/renderer/_error.page.tsx": () => import("./assets/_error.page.4fa6da32.js") });
 const pageFilesLazyIsomorph = { ...pageFilesLazyIsomorph1 };
 pageFilesLazy[".page"] = pageFilesLazyIsomorph;
 const pageFilesExportNamesEagerIsomorph1 = /* @__PURE__ */ Object.assign({ "/pages/about/index.page.tsx": __vite_glob_1_0, "/pages/assets/index.page.tsx": __vite_glob_1_1, "/pages/index/index.page.tsx": __vite_glob_1_2, "/renderer/_error.page.tsx": __vite_glob_1_3 });
