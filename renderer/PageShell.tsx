@@ -2,7 +2,7 @@ import React from 'react'
 import logo from './logo.svg'
 import { PageContextProvider } from './usePageContext'
 import type { PageContext } from './types'
-import './PageShell.css'
+// import './PageShell.css'
 import { Link } from './Link'
 
 export { PageShell }
@@ -11,7 +11,7 @@ function PageShell({ children, pageContext }: { children: React.ReactNode; pageC
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
-        <Layout>
+        {/* <Layout>
           <Sidebar>
             <Logo />
             <Link className="navitem" href="/">
@@ -22,7 +22,8 @@ function PageShell({ children, pageContext }: { children: React.ReactNode; pageC
             </Link>
           </Sidebar>
           <Content>{children}</Content>
-        </Layout>
+        </Layout> */}
+        {children}
       </PageContextProvider>
     </React.StrictMode>
   )

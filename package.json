@@ -7,6 +7,8 @@
     "server:prod": "cross-env NODE_ENV=production ts-node ./server/index.ts"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@types/compression": "^1.7.2",
     "@types/express": "^4.17.14",
     "@types/node": "^18.11.9",
@@ -24,5 +26,8 @@
     "vite": "^4.0.3",
     "vite-plugin-ssr": "^0.4.69"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@vitejs/plugin-react-swc": "^3.0.1"
+  }
 }

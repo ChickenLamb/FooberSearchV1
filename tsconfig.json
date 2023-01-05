@@ -8,7 +8,9 @@
     "types": ["vite/client"],
     "jsx": "react",
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl":"./",
+    // "paths": {"/assets/assets":["/assets/assets.tsx"]}
   },
   "ts-node": {
     "transpileOnly": true,
