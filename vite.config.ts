@@ -5,8 +5,16 @@ import ssr from 'vite-plugin-ssr/plugin'
 import { UserConfig } from 'vite'
 
 const config: UserConfig = {
+  base:'/',
   // We opt into pre-rendering by setting the global config prerender
-  plugins: [react(), ssr({ prerender: true })]
+  plugins: [react(), ssr({ prerender: true })],
+  resolve: {
+
+    // alias: {
+      // add alias for styled-components to work properly
+        // "styled-components": "styled-components"
+    // }
+}
 }
 
 export default config
