@@ -6,4 +6,7 @@
 2. import Component to Pages
 3. Write Functions
 
+`
+Base setup work from commit:6286dce
+`
 ---

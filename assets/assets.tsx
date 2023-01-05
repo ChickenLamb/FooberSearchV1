@@ -50,6 +50,7 @@ export function Assets(){
     <Content>ddddf</Content>
     <Logo/>
     <Button>This is a Button</Button>
+    <input type={'text'}></input>
     </>
         
     )
