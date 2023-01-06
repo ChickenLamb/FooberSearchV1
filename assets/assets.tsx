@@ -129,15 +129,12 @@ export function Fonts() {
 }
 export function Logo() {
   return (
-    <div
-      style={{
-        margin: 10,
-      }}
+    <
     >
       <a href="/">
-        <img src={logo} height={64} width={64} alt="logo" />
+        <img style={{display:"block"}} src={logo} height={'auto'} width={"100%"} alt="logo" />
       </a>
-    </div>
+    </>
   );
 }
 const Button = MyStyled.button`
@@ -192,7 +189,8 @@ export function Assets() {
       <ComponentsWithoutChildren/>
       <ComponentWithChildren>Component With Children</ComponentWithChildren>
       <ComponentsWithChildren>Components With Children</ComponentsWithChildren>
-      <Logo />
+      <div style={{width:"500px"}}><Logo /></div>
+      
       <Button>This is a Button</Button>
       <input type={"text"}></input>
     </div>

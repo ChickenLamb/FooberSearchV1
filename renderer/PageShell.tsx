@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './logo.svg'
+import logo from '../assets/logo.svg'
 import { PageContextProvider } from './usePageContext'
 import type { PageContext } from './types'
 // import './PageShell.css'
@@ -7,6 +7,7 @@ import type { PageContext } from './types'
 // import fonts
 import '../assets/fonts/Noto_Sans_TC_sans-serif.css'
 // import commonStyle to replace regular tags style
+// import global component such as Menu Sidebar Component in this file
 import '../assets/commonStyle.css'
 import { Link } from './Link'
 

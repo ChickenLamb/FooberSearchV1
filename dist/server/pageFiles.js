@@ -41,7 +41,7 @@ pageFilesLazy[".page"] = pageFilesLazyIsomorph;
 const pageFilesExportNamesEagerIsomorph1 = /* @__PURE__ */ Object.assign({ "/pages/about/index.page.tsx": __vite_glob_1_0, "/pages/assets/index.page.tsx": __vite_glob_1_1, "/pages/index/index.page.tsx": __vite_glob_1_2, "/renderer/_error.page.tsx": __vite_glob_1_3 });
 const pageFilesExportNamesEagerIsomorph = { ...pageFilesExportNamesEagerIsomorph1 };
 pageFilesExportNamesEager[".page"] = pageFilesExportNamesEagerIsomorph;
-const pageFilesLazyServer1 = /* @__PURE__ */ Object.assign({ "/renderer/_default.page.server.tsx": () => import("./assets/_default.page.server.8067fef3.js") });
+const pageFilesLazyServer1 = /* @__PURE__ */ Object.assign({ "/renderer/_default.page.server.tsx": () => import("./assets/_default.page.server.7af187ae.js") });
 const pageFilesLazyServer = { ...pageFilesLazyServer1 };
 pageFilesLazy[".page.server"] = pageFilesLazyServer;
 const pageFilesExportNamesEagerServer1 = /* @__PURE__ */ Object.assign({ "/renderer/_default.page.server.tsx": __vite_glob_3_0 });

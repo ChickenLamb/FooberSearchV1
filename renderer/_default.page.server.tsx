@@ -2,7 +2,7 @@ import ReactDOMServer from 'react-dom/server'
 import React from 'react'
 import { PageShell } from './PageShell'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
-import logoUrl from '../assets/logo.svg'
+import logoUrl from '../assets/icon.svg'
 import type { PageContextServer } from './types'
 
 export { render }
