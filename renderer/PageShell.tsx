@@ -3,6 +3,11 @@ import logo from './logo.svg'
 import { PageContextProvider } from './usePageContext'
 import type { PageContext } from './types'
 // import './PageShell.css'
+// import custom css in this file
+// import fonts
+import '../assets/fonts/Noto_Sans_TC_sans-serif.css'
+// import commonStyle to replace regular tags style
+import '../assets/commonStyle.css'
 import { Link } from './Link'
 
 export { PageShell }

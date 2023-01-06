@@ -4,10 +4,7 @@ import { PageShell } from './PageShell'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
 import logoUrl from '../assets/logo.svg'
 import type { PageContextServer } from './types'
-// import fonts
-import '../assets/fonts/Noto_Sans_TC_sans-serif.css'
-// import commonStyle to replace regular tags style
-import '../assets/commonStyle.css'
+
 export { render }
 // See https://vite-plugin-ssr.com/data-fetching
 export const passToClient = ['pageProps', 'urlPathname']
