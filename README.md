@@ -22,5 +22,8 @@ import Custom Global CSS styling  to PageShell.tsx
 ## Tweaking Made:
 1. enable only woff2, but it's usage is only [96%](https://caniuse.com/woff2)
 
+## Vercel
+Hosting override output directory to `'dist/client/'`
+
 Website Showcase on vercel hosting: [Go to Webpage](https://foober-search-v1.vercel.app/)
 ---
