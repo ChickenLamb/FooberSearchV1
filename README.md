@@ -13,7 +13,14 @@
 3. body font-size: 1.2em(12pt)
 4. Checkout Assets page on hosting directory ['./assets'](https://foober-search-v1.vercel.app/assets)
 
-Custom Global CSS styling import to PageShell.tsx
+## Custom CSS Import:
+import Custom Global CSS styling  to PageShell.tsx
+
+## Tweaking to do:
+1. subsetting fonts to improve load time using Glyphhanger?
+
+## Tweaking Made:
+1. enable only woff2, but it's usage is only [96%](https://caniuse.com/woff2)
 
 Website Showcase on vercel hosting: [Go to Webpage](https://foober-search-v1.vercel.app/)
 ---
