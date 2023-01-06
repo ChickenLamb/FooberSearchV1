@@ -1,0 +1,23 @@
+a {
+    text-decoration-line: none;
+    color:#f00;
+    width: fit-content;
+    height: fit-content;
+    box-shadow:inset 0px 0px 0px 1px #f00;   
+}
+a:hover{
+    background-color: #F00;
+    color: #FFF;
+    box-shadow:inset 0px 0px 0px 1px #000;
+}
+  html{
+    /* please use rem unit for all children component of html tag when styling for consistency */
+    /* default root font size is set to 10pt */
+    font-size: 10pt;
+    font-family: 'Noto Sans TC';
+  }
+  body {
+    margin: 0;
+    /* make body font size to approx~ 12pt */
+    font-size:1.2rem;
+  }
