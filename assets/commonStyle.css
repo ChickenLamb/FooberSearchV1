@@ -1,23 +1,63 @@
+:root {
+  --primary-color: #FF8C00 ;
+  --secondary-color:#FF1493;
+  --link-color:#F00;
+  --text-hover-color:#FFF;
+  --default-radius:3px;
+  --shadow-color:#FFC0CB;
+  --footer-color:#FF4500;
+  --white-color:#FFF;
+}
 a {
-    text-decoration-line: none;
-    color:#f00;
-    width: fit-content;
-    height: fit-content;
-    box-shadow:inset 0px 0px 0px 1px #f00;   
+  width: fit-content;
+  height: fit-content;
+  padding:5px;
+  text-decoration-line: none;
+  color: var(--link-color);
+  background-color: var(--white-color);
+  box-shadow: inset 0px 0px 0px 1px var(--link-color);
 }
-a:hover{
-    background-color: #F00;
-    color: #FFF;
-    box-shadow:inset 0px 0px 0px 1px #000;
+a:hover {
+  background-color: var(--link-color);
+  color: var(--text-hover-color);
+  box-shadow: inset 0px 0px 0px 1px #000;
 }
-  html{
-    /* please use rem unit for all children component of html tag when styling for consistency */
-    /* default root font size is set to 10pt */
-    font-size: 10pt;
-    font-family: 'Noto Sans TC';
-  }
-  body {
-    margin: 0;
-    /* make body font size to approx~ 12pt */
-    font-size:1.2rem;
-  }
+a::after {
+  
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px;
+}
+#logo::after{
+  content: none;
+}
+html {
+  /* please use rem unit for all children component of html tag when styling for consistency */
+  /* default root font size is set to 10pt */
+  font-size: 10pt;
+  font-family: "Noto Sans TC";
+}
+body {
+  margin: 0;
+  /* make body font size to approx~ 12pt */
+  font-size: 1.2rem;
+}
+button {
+  background: transparent;
+  border-radius: var(--default-radius);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  margin: 0 1em;
+  padding: 0.25em 1em;
+  box-shadow:3px 3px 2px 1px var(--shadow-color);
+}
+button:hover {
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+  box-shadow: none;
+}
+input {
+  border: 2px solid var(--primary-color);
+  border-radius: var(--default-radius);
+  box-shadow: inset 2px 1px var(--shadow-color);
+  text-shadow: 0 0 3px var(--primary-color), 0 0 5px var(--shadow-color);
+}
