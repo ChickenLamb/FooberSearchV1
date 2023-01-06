@@ -2,7 +2,7 @@ import ReactDOMServer from 'react-dom/server'
 import React from 'react'
 import { PageShell } from './PageShell'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
-import logoUrl from './logo.svg'
+import logoUrl from '../assets/logo.svg'
 import type { PageContextServer } from './types'
 
 export { render }
@@ -19,8 +19,8 @@ async function render(pageContext: PageContextServer) {
 
   // See https://vite-plugin-ssr.com/head
   const { documentProps } = pageContext.exports
-  const title = (documentProps && documentProps.title) || 'Vite SSR app'
-  const desc = (documentProps && documentProps.description) || 'App using Vite + vite-plugin-ssr'
+  const title = (documentProps && documentProps.title) || 'Foober Search'
+  const desc = (documentProps && documentProps.description) || 'Foodpanda and UberEats Searcher All in one Platform'
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">
