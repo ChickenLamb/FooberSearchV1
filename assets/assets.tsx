@@ -1,10 +1,7 @@
 import React from "react";
 import logo from "/assets/logo.svg";
 import styled from "styled-components";
-const MyStyled: typeof styled =
-  typeof styled === "function" ? styled : styled.default;
 
-// export default MyStyled;
 export function ColorPalette() {
   return (
     <div
@@ -137,18 +134,7 @@ export function Logo() {
     </>
   );
 }
-const Button = MyStyled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1em;
-  padding: 0.25em 1em;
-  &:hover{
 
-    background-color:blue;
-  }
-`;
 export function ComponentsWithoutChildren() {
   return (
     <div
@@ -191,7 +177,6 @@ export function Assets() {
       <ComponentsWithChildren>Components With Children</ComponentsWithChildren>
       <div style={{width:"500px"}}><Logo /></div>
       
-      <Button>This is a Button</Button>
       <input type={"text"}></input>
     </div>
   );
