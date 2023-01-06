@@ -150,6 +150,7 @@ export function Footer() {
           color: "var(--white-color)",
           backgroundColor: "var(--footer-color)",
           padding: "30px 0px 30px 5%",
+          overflow:"auto",
         }}
       ><span>Footer</span>
         
@@ -191,13 +192,13 @@ export function ComponentsWithChildren({ children }: { children: React.ReactNode
 // show all assets done
 export function Assets() {
   return (
-    <div style={{ margin: "10px" }}>
+    <div style={{ margin: "10px",}}>
       {/* <h3>Build Component Using Options below:</h3>
       <ComponentsWithoutChildren/>
       <ComponentsWithChildren>Components With Children</ComponentsWithChildren> */}
       <ColorPalette />
       <Fonts />
-      <div style={{ width: "500px" }}><Logo /></div>
+      <div style={{width:"500px"}}><Logo /></div>
       <hr />
       <button>this is a button</button>
       <input type={"text"}></input>
