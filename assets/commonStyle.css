@@ -7,6 +7,7 @@
   --shadow-color:#FFC0CB;
   --footer-color:#FF4500;
   --white-color:#FFF;
+  --black-color:#000;
 }
 a {
   width: fit-content;
@@ -27,13 +28,7 @@ a::after {
   content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
   margin: 0 3px 0 5px;
 }
-#logo {
-  padding: 0;
-}
-#logo::after{
-  content: none;
-  margin:0;
-}
+
 html {
   /* please use rem unit for all children component of html tag when styling for consistency */
   /* default root font size is set to 10pt */

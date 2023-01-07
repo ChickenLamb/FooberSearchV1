@@ -1,5 +1,58 @@
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import logo from "/assets/logo.svg";
+import styled from "./style-components-fix";
+export type FoodPandaPerData = {
+  food_name: string;
+  shop_name: string;
+  deliver_fee: number;
+  deliver_time: number;
+  price: number;
+  url: string;
+};
+export type UberEatPerData = {
+  food_name: string;
+  shop_name: string;
+  deliver_fee: number;
+  deliver_time: number;
+  price: number;
+  url: string;
+};
+type BoardProps = {
+  FoodPandaPerData: FoodPandaPerData;
+  UberEatPerData: UberEatPerData;
+};
+//<a> with no styling = <A>
+const A = styled.a`
+  color: var(--black-color);
+  box-shadow: none;
+  &:hover {
+    box-shadow: none;
+    background-color: var(--white-color);
+    color: var(--black-color);
+  }
+  &::after {
+    content: none;
+    margin: 0;
+  }
+`;
+{/* <A> with styling */ }
+const A1 = styled.a`
+  color: var(--black-color);
+  box-shadow: none;
+  border: 2px solid var(--primary-color);
+  box-shadow: 3px 3px 2px 1px var(--shadow-color);
+  border-radius: var(--default-radius);
+  &:hover {
+    box-shadow: none;
+    background-color: var(--white-color);
+    color: var(--black-color);
+  }
+  &::after {
+    content: none;
+    margin: 0;
+  }
+`;
+
 export function ColorPalette() {
   return (
     <div
@@ -92,7 +145,13 @@ export function ColorPalette() {
       <div style={{ backgroundColor: "#FF0000", flexBasis: "25%" }}>
         #FF0000 (red)<strong>****link-color</strong>
       </div>
-      <div style={{ backgroundColor: "#FFFFFF", flexBasis: "25%", border: "1px solid black" }}>
+      <div
+        style={{
+          backgroundColor: "#FFFFFF",
+          flexBasis: "25%",
+          border: "1px solid black",
+        }}
+      >
         #FFFFFF (red)<strong>*****text-hover-color</strong>
       </div>
     </div>
@@ -121,16 +180,26 @@ export function Fonts() {
       <p style={{ flexBasis: "100%" }}>The cat sat on the mat.</p>
       <h3 style={{ flexBasis: "100%" }}>中文（繁體）:</h3>
       <p style={{ flexBasis: "100%" }}>花开富贵在君王邸，花谢贫贱在我床前。</p>
-      <cite><strong>font-weight</strong>:100,300,<strong>400(default)</strong>,500,700,900.<br /> html default <strong>font-size</strong>: <strong>10pt</strong></cite>
+      <cite>
+        <strong>font-weight</strong>:100,300,<strong>400(default)</strong>
+        ,500,700,900.
+        <br /> html default <strong>font-size</strong>: <strong>10pt</strong>
+      </cite>
     </div>
   );
 }
 export function Logo() {
   return (
     <>
-      <a id="logo" href="/">
-        <img style={{ display: "block" }} src={logo} height={'auto'} width={"100%"} alt="logo" />
-      </a>
+      <A href="/">
+        <img
+          style={{ display: "block" }}
+          src={logo}
+          height={"auto"}
+          width={"100%"}
+          alt="logo"
+        />
+      </A>
     </>
   );
 }
@@ -138,7 +207,6 @@ export function Logo() {
 export function Footer() {
   return (
     <>
-
       <div
         style={{
           width: "95%",
@@ -146,26 +214,124 @@ export function Footer() {
           color: "var(--white-color)",
           backgroundColor: "var(--footer-color)",
           padding: "30px 0px 30px 5%",
-          overflow:"auto",
-          display:"flex"
+          overflow: "auto",
+          display: "flex",
         }}
-      ><span style={{flexBasis:"50%"}}>Footer</span>
-        
-        <a style={{flexGrow:1,margin:"0 10px"}} href="#about">About</a>
-        <a style={{flexGrow:1,margin:"0 10px"}} href="#advertising">Advertising</a>
-        <a style={{flexGrow:1,margin:"0 10px"}} href="#business">Business</a>
-        <a style={{flexGrow:1,margin:"0 10px"}} href="#how-search-works">How Search works</a>
+      >
+        <span style={{ flexBasis: "50%" }}>Footer</span>
+
+        <a style={{ flexGrow: 1, margin: "0 10px" }} href="#about">
+          About
+        </a>
+        <a style={{ flexGrow: 1, margin: "0 10px" }} href="#advertising">
+          Advertising
+        </a>
+        <a style={{ flexGrow: 1, margin: "0 10px" }} href="#business">
+          Business
+        </a>
+        <a style={{ flexGrow: 1, margin: "0 10px" }} href="#how-search-works">
+          How Search works
+        </a>
       </div>
     </>
   );
 }
+const Board: FC<BoardProps> = ({
+  FoodPandaPerData: FoodPandaPerData,
+  UberEatPerData: UberEatPerData,
+}): ReactElement => {
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "fit-content",
+        display: "flex",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        columnGap: "1rem",
+        boxSizing: "border-box",
+        padding: "0 10px"
+      }}
+    >
 
+      <div
+        style={{
+          flexGrow: 2, flexShrink: 1,
+          // border:"1px solid black",
+          borderRadius: "var(--default-radius)",
+          backgroundColor: "var(--white-color)",
+          height: "25vh",
+          minWidth: "300px",
+          minHeight: "300px",
+          boxSizing: "border-box",
+          padding: "20px",
+        }}
+      >
+        <h2 style={{ textAlign: "center" }}>FoodName</h2>
+        <h3 style={{ textAlign: "center" }}>這筆資料正確嗎？</h3>
+        <div style={{ margin: "5px 0", width: "100%", display: "inline-flex", alignItems: "center", }}><div style={{ textAlign: "right", flexBasis: "72%", fontSize: "2rem" }}>11</div><button style={{ fontSize: "2rem" }}>🖒</button></div>
+        <div style={{ margin: "5px 0", width: "100%", display: "inline-flex", alignItems: "center", }}><div style={{ textAlign: "right", flexBasis: "72%", fontSize: "2rem" }}> 3</div><button style={{ fontSize: "2rem" }}>🖓</button></div>
+
+      </div>
+
+      <A1 style={{ flexGrow: 1, flexShrink: 1 }} target={"_blank"} href={FoodPandaPerData?.url}>
+        <div
+          style={{
+            borderRadius: "var(--default-radius)",
+            backgroundColor: "var(--white-color)",
+            width: "100%",
+            height: "25vh",
+            minWidth: "300px",
+            minHeight: "300px",
+            boxSizing: "border-box",
+            padding: "20px",
+          }}
+        >
+          <h2 style={{ color: "#CD0B66" }}>FoodPanda</h2>
+          <h3>{FoodPandaPerData.shop_name}</h3>
+          <ul>
+            <li>送餐時間：{FoodPandaPerData.deliver_time}分鐘</li>
+            <li>價格：    ${FoodPandaPerData.price}</li>
+            <li>外送費用：${FoodPandaPerData.deliver_fee}</li>
+          </ul>
+          <h1 style={{ textAlign: "right" }}>${FoodPandaPerData.price + FoodPandaPerData.deliver_fee}</h1>
+        </div>
+      </A1>
+      <A1 style={{ flexGrow: 1, flexShrink: 1 }} target={"_blank"} href={UberEatPerData?.url}>
+        <div
+          style={{
+            borderRadius: "var(--default-radius)",
+            backgroundColor: "var(--white-color)",
+            width: "100%",
+            height: "25vh",
+            minWidth: "300px",
+            minHeight: "300px",
+            boxSizing: "border-box",
+            padding: "20px",
+          }}
+        >
+          <h2 style={{
+            color: "#06C167",
+            textShadow: "1px 1px #142328"
+          }}>UberEat</h2>
+          <h3>{UberEatPerData.shop_name}</h3>
+          <ul>
+            <li>送餐時間：{UberEatPerData.deliver_time}分鐘</li>
+            <li>價格：    ${UberEatPerData.price}</li>
+            <li>外送費用：${UberEatPerData.deliver_fee}</li>
+          </ul>
+          <h1 style={{ textAlign: "right" }}>${UberEatPerData.price + UberEatPerData.deliver_fee}</h1>
+        </div>
+      </A1>
+    </div>
+  );
+};
 export function ComponentsWithoutChildren() {
   return (
     <div
       style={{
         width: "fit-content",
-        height: "fit-content"
+        height: "fit-content",
       }}
     >
       Components Without Children
@@ -173,12 +339,16 @@ export function ComponentsWithoutChildren() {
   );
 }
 
-export function ComponentsWithChildren({ children }: { children: React.ReactNode }) {
+export function ComponentsWithChildren({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div
       style={{
         width: "fit-content",
-        height: "fit-content"
+        height: "fit-content",
       }}
     >
       {children}
@@ -189,17 +359,39 @@ export function ComponentsWithChildren({ children }: { children: React.ReactNode
 // show all assets done
 export function Assets() {
   return (
-    <div style={{ margin: "10px",}}>
+    <div style={{ margin: "10px" }}>
       {/* all component are built using model below */}
       {/* <h3>Build Component Using Options below:</h3>
       <ComponentsWithoutChildren/>
       <ComponentsWithChildren>Components With Children</ComponentsWithChildren> */}
       <ColorPalette />
       <Fonts />
-      <div style={{width:"500px"}}><Logo /></div>
+      <div style={{ width: "500px" }}>
+        <Logo />
+      </div>
       <hr />
       <button>this is a button</button>
       <input type={"text"}></input>
+      <hr />
+      <h2>為您找到相似的‘FoodName’有</h2>
+      <Board
+        FoodPandaPerData={{
+          food_name: "foodname01",
+          shop_name: "shopname01",
+          deliver_fee: 49,
+          deliver_time: 25,
+          price: 100,
+          url: "https://www.foodpanda.com.tw/en/restaurant/e5oc/qi-zhan-cha-san-zhong-zi-qiang-dian",
+        }}
+        UberEatPerData={{
+          food_name: "foodname02",
+          shop_name: "shopname02",
+          deliver_fee: 59,
+          deliver_time: 35,
+          price: 110,
+          url: "https://www.ubereats.com/tw-en/store/%E5%AF%A7%E5%A4%8F%E5%A4%9C%E5%B8%82-%E5%AF%A7%E5%A4%8F%E9%9A%A8%E7%B7%A3%E7%B4%A0%E9%A3%9F/-rt8e3bNUeOkQoFI23lsQg?diningMode=DELIVERY",
+        }}
+      />
       <hr />
       <Footer />
     </div>
