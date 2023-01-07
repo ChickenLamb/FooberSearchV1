@@ -248,9 +248,11 @@ const Board: FC<BoardProps> = ({
         display: "flex",
         justifyContent: "flex-start",
         alignItems: "center",
-        columnGap: "1rem",
+        columnGap: "1.6rem",
         boxSizing: "border-box",
-        padding: "0 10px"
+        paddingLeft:"30px",
+        paddingRight:"230px",
+        margin:"30px 0"
       }}
     >
 
