@@ -25,6 +25,7 @@
 ---
 ## Tweaking to do:
 1. subsetting fonts to improve load time using Glyphhanger?
+2. rework on per component RWD design later on after finished implemented basic functionalities
 
 ## Tweaking Made:
 1. enable only woff2, but it's usage is only [96%](https://caniuse.com/woff2)
