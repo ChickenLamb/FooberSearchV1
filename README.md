@@ -7,7 +7,7 @@
 3. Write Functions
 
 
-`Base setup work from commit:7dcdd0c`
+`Base setup work from commit:` [6a05c45](https://github.com/ChickenLamb/FooberSearchV1/tree/6a05c45f8c2152368fdf5b142f40e3c668fb1c15)
 1. imported default font-family:"Noto Sans TCsans-serif"
 2. default font-size: 10pt
 3. body font-size: 1.2em(12pt)
