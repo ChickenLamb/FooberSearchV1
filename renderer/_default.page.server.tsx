@@ -2,6 +2,10 @@ import ReactDOMServer from 'react-dom/server'
 import React from 'react'
 import { PageShell } from './PageShell'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
+// By default, static assets (CSS, images, ...) imported only by server code are missing in the client production bundle
+// A workaround is to make sure that all assets are imported at least once from client code(_default.page.client.tsx).
+// Else we need to set `includeAssetsImportedByServer` to `true` if we want
+// static assets in sever code(_default.page.server.tsx)  to be included in production bundle (i.e. /dist/client/assets/) , otherwise it will be ignored.
 import logoUrl from '../assets/icon.svg'
 import type { PageContextServer } from './types'
 

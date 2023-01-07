@@ -7,7 +7,10 @@ import { UserConfig } from 'vite'
 const config: UserConfig = {
   base:'/',
   // We opt into pre-rendering by setting the global config prerender
-  plugins: [react(), ssr({ prerender: true })],
+  plugins: [react(), ssr({ prerender: true ,
+    // set includeAssetsImportedByServer: true to include Sever code imported Static files during client production bundling(*experimental feature*)
+    // includeAssetsImportedByServer: true
+  })]
 
 }
 
