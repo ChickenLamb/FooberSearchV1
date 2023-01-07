@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import logo from "/assets/logo.svg";
 import styled from "./style-components-fix";
-export type FoodPandaPerData = {
+ type FoodPandaPerData = {
   food_name: string;
   shop_name: string;
   deliver_fee: number;
@@ -9,7 +9,7 @@ export type FoodPandaPerData = {
   price: number;
   url: string;
 };
-export type UberEatPerData = {
+ type UberEatPerData = {
   food_name: string;
   shop_name: string;
   deliver_fee: number;
@@ -17,12 +17,12 @@ export type UberEatPerData = {
   price: number;
   url: string;
 };
-type BoardProps = {
+export type BoardProps = {
   FoodPandaPerData: FoodPandaPerData;
   UberEatPerData: UberEatPerData;
 };
 //<a> with no styling = <A>
-const A = styled.a`
+export const A = styled.a`
   color: var(--black-color);
   box-shadow: none;
   &:hover {
@@ -36,7 +36,7 @@ const A = styled.a`
   }
 `;
 {/* <A> with styling */ }
-const A1 = styled.a`
+export const A1 = styled.a`
   color: var(--black-color);
   box-shadow: none;
   border: 2px solid var(--primary-color);
@@ -195,7 +195,7 @@ export function Logo() {
         <img
           style={{ display: "block" }}
           src={logo}
-          height={"auto"}
+          height={"100%"}
           width={"100%"}
           alt="logo"
         />
@@ -236,7 +236,7 @@ export function Footer() {
     </>
   );
 }
-const Board: FC<BoardProps> = ({
+export const Board: FC<BoardProps> = ({
   FoodPandaPerData: FoodPandaPerData,
   UberEatPerData: UberEatPerData,
 }): ReactElement => {

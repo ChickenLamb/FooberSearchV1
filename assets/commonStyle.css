@@ -5,9 +5,13 @@
   --text-hover-color:#FFF;
   --default-radius:3px;
   --shadow-color:#FFC0CB;
-  --footer-color:#FF4500;
+  --footer-color:#2F2F4F;
   --white-color:#FFF;
   --black-color:#000;
+}
+/* enable overflow when styling to make life easier */
+*{
+  overflow: auto;
 }
 a {
   width: fit-content;
@@ -17,6 +21,7 @@ a {
   color: var(--link-color);
   background-color: var(--white-color);
   box-shadow: inset 0px 0px 0px 1px var(--link-color);
+  display: block;
 }
 a:hover {
   background-color: var(--link-color);
