@@ -5,8 +5,6 @@ export function ColorPalette() {
     <div
       style={{
         display: "flex",
-        flexShrink: 1,
-        flexGrow: 1,
         flexWrap: "wrap",
         border: "1px solid black",
         boxSizing: "border-box",
@@ -105,8 +103,6 @@ export function Fonts() {
     <div
       style={{
         display: "flex",
-        flexShrink: 1,
-        flexGrow: 1,
         flexWrap: "wrap",
         border: "1px solid black",
         boxSizing: "border-box",
@@ -151,13 +147,14 @@ export function Footer() {
           backgroundColor: "var(--footer-color)",
           padding: "30px 0px 30px 5%",
           overflow:"auto",
+          display:"flex"
         }}
-      ><span>Footer</span>
+      ><span style={{flexBasis:"50%"}}>Footer</span>
         
-        <a style={{margin:"0 10px"}} href="#about">About</a>
-        <a style={{margin:"0 10px"}} href="#advertising">Advertising</a>
-        <a style={{margin:"0 10px"}} href="#business">Business</a>
-        <a style={{margin:"0 10px"}} href="#how-search-works">How Search works</a>
+        <a style={{flexGrow:1,margin:"0 10px"}} href="#about">About</a>
+        <a style={{flexGrow:1,margin:"0 10px"}} href="#advertising">Advertising</a>
+        <a style={{flexGrow:1,margin:"0 10px"}} href="#business">Business</a>
+        <a style={{flexGrow:1,margin:"0 10px"}} href="#how-search-works">How Search works</a>
       </div>
     </>
   );
