@@ -4,7 +4,7 @@ import { PageShell } from './PageShell'
 import type { PageContextClient } from './types'
 // Workaround: we import icon.svg here as well, even though we don't use it in this file,
 // to make Vite include icon.svg in the client bundle.
-import logoUrl from '../assets/icon.svg'
+import '../assets/icon.svg'
 export { render }
 
 async function render(pageContext: PageContextClient) {
