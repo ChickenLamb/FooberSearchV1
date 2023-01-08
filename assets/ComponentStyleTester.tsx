@@ -1,6 +1,4 @@
 import React from 'react'
-import { Logo, Footer } from '../../assets/assets'
-import './code.css'
 
 export { Page }
 // this file ensure the div height and width matches to 100vh and 100 vw

@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import logo from "/assets/logo.svg";
 import styled from "./style-components-fix";
-import type * as CSS from 'csstype';
+import {GetIpData, IpData} from './othersFunction'
  type FoodPandaPerData = {
   food_name: string;
   shop_name: string;
@@ -18,7 +18,7 @@ import type * as CSS from 'csstype';
   price: number;
   url: string;
 };
-type Style={style:React.CSSProperties};
+type Style={style?:React.CSSProperties;IpData?:IpData; [key: string]: any};
  type BoardProps = {
   FoodPandaPerData: FoodPandaPerData;
   UberEatPerData: UberEatPerData;
@@ -208,9 +208,10 @@ export function Logo() {
 // can also be written with 
 // export const Footer :FC<Style> =({style:style}): ReactElement =>{
   export function Footer({
-    style
+    style,IpData
   }: Style){
-  const style1:React.CSSProperties = {...style,width:"100%" }
+  const style1:React.CSSProperties = {...style,width:"100%" };
+    console.log(IpData,"here is input")
   return (
     <div style={style1}>
       <div
@@ -224,7 +225,7 @@ export function Logo() {
           display: "flex",
         }}
       >
-        <span style={{ flexBasis: "50%" }}>Footer</span>
+        <span style={{ flexBasis: "10%" }}>Footer</span>  <cite style={{ flexBasis: "40%" }}>{IpData?.city}, {IpData?.state}</cite>
 
         <a style={{ flexGrow: 1, margin: "0 10px" }} href="#about">
           About
@@ -282,7 +283,7 @@ export const Board: FC<BoardProps> = ({
 
       </div>
 
-      <A1 style={{ flexGrow: 1, flexShrink: 1 }} target={"_blank"} href={FoodPandaPerData?.url}>
+      <A1 style={{ flexGrow: 1, flexShrink: 1 }} target={"_blank"} href={FoodPandaPerData.url}>
         <div
           style={{
             borderRadius: "var(--default-radius)",
@@ -305,7 +306,7 @@ export const Board: FC<BoardProps> = ({
           <h1 style={{ textAlign: "right" }}>${FoodPandaPerData.price + FoodPandaPerData.deliver_fee}</h1>
         </div>
       </A1>
-      <A1 style={{ flexGrow: 1, flexShrink: 1 }} target={"_blank"} href={UberEatPerData?.url}>
+      <A1 style={{ flexGrow: 1, flexShrink: 1 }} target={"_blank"} href={UberEatPerData.url}>
         <div
           style={{
             borderRadius: "var(--default-radius)",

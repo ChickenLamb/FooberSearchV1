@@ -40,9 +40,12 @@ Basically the same but, I do not have good reason to choose 2 over 1. 1 just mak
 ## Tweaking to do:
 1. subsetting fonts to improve load time using Glyphhanger?
 2. rework on per component RWD design later on after finished implemented basic functionalities
+3. Should i use geo or IP as user's location?IP seems okay for seamless experience(no pop up window showed asking user's location access right )
+4. Export all type to module for future better code maintenance, stability
 
 ## Tweaking Made:
 1. enable only woff2, but it's usage is only [96%](https://caniuse.com/woff2)
+2. add in geo location support for more precise result search.
 
 ## Vercel
 ! Hosting override output directory to `'dist/client/'`
