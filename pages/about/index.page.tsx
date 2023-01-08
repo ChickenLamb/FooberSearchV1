@@ -15,7 +15,7 @@ function Page() {
       </div>
       <div style={{padding:"30px 0",height:"10vh", bottom: "85px", display:"flex",flexWrap:"wrap",alignContent:"center", justifyContent:"center"}}><input style={{marginRight:"0"}} type={"text"}></input>
         <button style={{marginRight:"auto"}}>搜尋</button></div>
-        <div style={{ height:"40vh", display:"flex"}}><Footer /></div>
+        <div style={{ height:"40vh", display:"flex", }}><Footer /></div>
       </div>
       
       
