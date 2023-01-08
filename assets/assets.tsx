@@ -1,6 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import logo from "/assets/logo.svg";
 import styled from "./style-components-fix";
+import type * as CSS from 'csstype';
  type FoodPandaPerData = {
   food_name: string;
   shop_name: string;
@@ -17,7 +18,8 @@ import styled from "./style-components-fix";
   price: number;
   url: string;
 };
-export type BoardProps = {
+type Style={style:React.CSSProperties};
+ type BoardProps = {
   FoodPandaPerData: FoodPandaPerData;
   UberEatPerData: UberEatPerData;
 };
@@ -203,10 +205,14 @@ export function Logo() {
     </>
   );
 }
-
-export function Footer() {
+// can also be written with 
+// export const Footer :FC<Style> =({style:style}): ReactElement =>{
+  export function Footer({
+    style
+  }: Style){
+  const style1:React.CSSProperties = {...style,width:"100%" }
   return (
-    <>
+    <div style={style1}>
       <div
         style={{
           width: "100%",
@@ -233,7 +239,7 @@ export function Footer() {
           How Search works
         </a>
       </div>
-    </>
+    </div>
   );
 }
 export const Board: FC<BoardProps> = ({
