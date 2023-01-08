@@ -9,10 +9,15 @@
   --white-color:#FFF;
   --black-color:#000;
 }
-/* enable overflow when styling to make life easier */
+/* enable to make life easier */
 *{
-  overflow: auto;
+  /* overflow: auto; */
+  /*set all element margin to auto as default. */
+  margin:auto;
+  /*making sure even if component added padding, it will not overflow defined width or height*/
+  box-sizing: border-box;
 }
+
 a {
   width: fit-content;
   height: fit-content;
@@ -33,15 +38,18 @@ a::after {
   content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
   margin: 0 3px 0 5px;
 }
-
+/* By default body and html are assigned to margin or padding */
 html {
-  /* please use rem unit for all children component of html tag when styling for consistency */
+  /* please use rem unit for all children component of html tag when styling font-size for consistency */
   /* default root font size is set to 10pt */
   font-size: 10pt;
   font-family: "Noto Sans TC";
+  margin:0;
+  padding:0;
 }
 body {
   margin: 0;
+  padding:0;
   /* make body font size to approx~ 12pt */
   font-size: 1.2rem;
 }

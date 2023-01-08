@@ -22,6 +22,13 @@
 ## [style-components-fix.tsx](https://github.com/ChickenLamb/FooberSearchV1/tree/main/assets/style-components-fix.tsx)
 `// DO NOT DELETE THIS FILE
 // TO FIX message "TypeError: styled.a is not a function" when production bundling 'styled-components' modules`
+
+## Styling Note
+1. *{margin:auto;}   ->  set all element margin to auto as default.
+2. for some reason, please use [ComponentStyleTester.tsx](https://github.com/ChickenLamb/FooberSearchV1/tree/main/assets/ComponentStyleTester.tsx) as starting file and, it is set to match body with 100% width of body and height of 100vh.(if *width* use *%*, *height* use  *vh*, else it will cause an overflow of body).
+3. *{box-sizing: border-box;}  ->  making sure even if component added padding, it will not overflow defined width or height
+4. if add margin will cause overflowing of parrent*(margin collapsing)*[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing]    ->  If there is no border, padding, inline content, height, or min-height to separate a block's margin-top from its margin-bottom, then its top and bottom margins collapse.
+5. use padding for spacing and layout, margin for spaces between sibling elements(How to Avoid Margin Collapse)[https://www.freecodecamp.org/news/what-is-margin-collapse-and-how-to-avoid-it/#:~:text=How%20to%20Avoid%20Margin%20Collapse,first%20for%20padding%20if%20possible.]
 ---
 ## Tweaking to do:
 1. subsetting fonts to improve load time using Glyphhanger?

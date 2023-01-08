@@ -193,9 +193,9 @@ export function Logo() {
     <>
       <A href="/">
         <img
-          style={{ display: "block" }}
+          // style={{ display: "block" }}
           src={logo}
-          height={"100%"}
+          height={"auto"}
           width={"100%"}
           alt="logo"
         />
@@ -209,7 +209,7 @@ export function Footer() {
     <>
       <div
         style={{
-          width: "95%",
+          width: "100%",
           height: "fit-content",
           color: "var(--white-color)",
           backgroundColor: "var(--footer-color)",
