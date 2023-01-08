@@ -35,7 +35,7 @@ can be written with:
 1. export function Footer({style}: Style){
 2. // export const Footer :FC<Style> =({style:style}): ReactElement =>{
 
-Basically the same but, I do not have good reason to choose 2 over 1. 1 just make life easier, less typo and less confuse with the writting style.
+Basically the same but, I do not have good reason to choose 2 over 1. 1 just make life easier, less prone to typos, easy to read and less confuse.
 ---
 ## Tweaking to do:
 1. subsetting fonts to improve load time using Glyphhanger?
