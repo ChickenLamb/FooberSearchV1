@@ -29,6 +29,13 @@
 3. *{box-sizing: border-box;}  ->  making sure even if component added padding, it will not overflow defined width or height
 4. if add margin will cause overflowing of parrent [margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)    ->  If there is no border, padding, inline content, height, or min-height to separate a block's margin-top from its margin-bottom, then its top and bottom margins collapse.
 5. use padding for spacing and layout, margin for spaces between sibling elements [How to Avoid Margin Collapse](https://www.freecodecamp.org/news/what-is-margin-collapse-and-how-to-avoid-it/#:~:text=How%20to%20Avoid%20Margin%20Collapse,first%20for%20padding%20if%20possible.)
+
+## ReactFunction
+can be written with:
+1. export function Footer({style}: Style){
+2. // export const Footer :FC<Style> =({style:style}): ReactElement =>{
+
+Basically the same but, I do not have good reason to choose 2 over 1. 1 just make life easier, less typo and less confuse with the writting style.
 ---
 ## Tweaking to do:
 1. subsetting fonts to improve load time using Glyphhanger?
