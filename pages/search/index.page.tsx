@@ -2,14 +2,19 @@ import React,{useState,useEffect, useContext} from 'react'
 import { Logo, Footer } from '../../assets/assets'
 import {type GlobalDatadef, type GlobalDatafunc, GlobalData, SetGlobalData } from '../../assets/DataContext'
 import {GetIpData} from '../../assets/othersFunction'
+import { navigate } from "vite-plugin-ssr/client/router";
 export { Page }
 
 function Page() {
   const Data = useContext<GlobalDatadef|null>(GlobalData)
   const setData = useContext<GlobalDatafunc|null>(SetGlobalData)
+  // let SearchURL = new URL(window.location.href);
+  
   useEffect(()=>{
     // get user ip
     GetIpData(setData?.SetIp);
+    console.log(window.location.href)
+    // setData?.SetSearchQuery(SearchURL.searchParams.get("q")||"")
     
 },[])
 

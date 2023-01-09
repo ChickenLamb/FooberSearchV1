@@ -224,7 +224,7 @@ export function Logo() {
           display: "flex",
         }}
       >
-        <span style={{ flexBasis: "10%" }}>Footer</span>  <cite style={{ flexBasis: "40%" }}>{IpData?.city}, {IpData?.state}</cite>
+        <span style={{ flexBasis: "10%" }}>Footer</span>  <cite style={{ flexBasis: "40%" }}>{[IpData?.city,IpData?.state].filter(Boolean).join(", ")}</cite>
 
         <a style={{ flexGrow: 1, margin: "0 10px" }} href="#about">
           About

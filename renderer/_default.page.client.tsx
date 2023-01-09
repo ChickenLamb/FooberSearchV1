@@ -24,3 +24,9 @@ async function render(pageContext: PageContextClient) {
 /* To enable Client-side Routing:
 export const clientRouting = true
 // !! WARNING !! Before doing so, read https://vite-plugin-ssr.com/clientRouting */
+export const clientRouting = true
+// Whether your UI framework allows the hydration to be aborted. (Allowing vite-plugin-ssr
+// to abort the hydration if the user clicks on a link before the hydration finished.)
+// Only React users should set `hydrationCanBeAborted` to `true`. (Other frameworks,
+// such as Vue, throw an error if the hydration is aborted.)
+export const hydrationCanBeAborted = true
