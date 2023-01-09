@@ -1,16 +1,19 @@
 import React,{useState,useEffect, useContext} from 'react'
 import { Logo, Footer } from '../../assets/assets'
-import {GlobalDatadef, GlobalDatafunc, GlobalData, SetGlobalData } from '../../assets/DataContext'
+import {type GlobalDatadef, type GlobalDatafunc, GlobalData, SetGlobalData } from '../../assets/DataContext'
 import {GetIpData} from '../../assets/othersFunction'
+import axios from 'axios'
 export { Page }
 
 function Page() {
   const Data = useContext<GlobalDatadef|null>(GlobalData)
   const setData = useContext<GlobalDatafunc|null>(SetGlobalData)
-  const [IpData,setIpData] = useState<any>('');
   useEffect(()=>{
-    console.log(setData?.SetIp("11142"))
+    // get user ip
+    GetIpData(setData?.SetIp);
+    
 },[])
+
 useEffect(()=>{console.log(Data)},[Data])
   return (
     <div style={{ overflow: "auto", width: "100%", backgroundColor: "var(--white-color)", height: "100vh", position: "relative" }}>
@@ -21,7 +24,7 @@ useEffect(()=>{console.log(Data)},[Data])
       </div>
       <div style={{ padding: "30px 0", height: "10vh", bottom: "85px", display: "flex", flexWrap: "wrap", alignContent: "center", justifyContent: "center" }}><input style={{ marginRight: "0" }} type={"text"}></input>
         <button style={{ marginRight: "auto" }}>搜尋</button></div>
-      <div style={{ height: "40vh", display: "flex", }}><Footer style={{ marginBottom: "0" }} IpData={IpData}/></div>
+      <div style={{ height: "40vh", display: "flex", }}><Footer style={{ marginBottom: "0" }} IpData={Data?.Ip}/></div>
     </div>
   )
 }

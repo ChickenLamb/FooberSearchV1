@@ -12,10 +12,10 @@ export type IpData = {
     state?: string;
 }
 
-export async function GetIpData(setIpData:React.Dispatch<any>) {
+export async function GetIpData(setIpData:React.Dispatch<any>|undefined) {
     //creating IP state
     let ip:IpData={};
-    axios.get('https://geolocation-db.com/json/').then((res)=>setIpData(res.data));
+    axios.get('https://geolocation-db.com/json/').then((res)=>setIpData?.(res.data));
     
     
 }

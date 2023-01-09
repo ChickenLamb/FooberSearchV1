@@ -7,19 +7,19 @@ import { IpData } from './othersFunction';
 // use it with :
 // const Data = useContext<GlobalDatadef|null>(GlobalData)
 export type GlobalDatadef = {
-    Ip?: string;
+    Ip?: IpData;
     SearchQuery?: string;
 }
 export type GlobalDatafunc = {
-    SetIp: (x: string) => void;
+    SetIp: (x: IpData) => void;
     SetSearchQuery: (x: string) => void;
 }
 export const GlobalData = React.createContext<GlobalDatadef | null>(null)
 export const SetGlobalData = React.createContext<GlobalDatafunc | null>(null)
 export function GlobalDataProvider({ children }: { children: React.ReactNode }) {
-    const [Globaldata, setGlobaldata] = useState<GlobalDatadef>({ Ip: "122.13.442", SearchQuery: "this is search query" });
+    const [Globaldata, setGlobaldata] = useState<GlobalDatadef>({  SearchQuery: "this is search query" });
     const [Globalfunction, setGlobalfunction] = useState<GlobalDatafunc>({ SetIp, SetSearchQuery });
-    function SetIp(x: string): void {
+    function SetIp(x: IpData): void {
         setGlobaldata((prevState) => ({
             ...prevState, Ip: x
         }))
