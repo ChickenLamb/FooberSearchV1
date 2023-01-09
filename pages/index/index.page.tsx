@@ -1,15 +1,17 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useContext} from 'react'
 import { Logo, Footer } from '../../assets/assets'
+import {GlobalDatadef, GlobalDatafunc, GlobalData, SetGlobalData } from '../../assets/DataContext'
 import {GetIpData} from '../../assets/othersFunction'
-
 export { Page }
 
 function Page() {
+  const Data = useContext<GlobalDatadef|null>(GlobalData)
+  const setData = useContext<GlobalDatafunc|null>(SetGlobalData)
   const [IpData,setIpData] = useState<any>('');
   useEffect(()=>{
-    // get ip address object
-    GetIpData(setIpData);
+    console.log(setData?.SetIp("11142"))
 },[])
+useEffect(()=>{console.log(Data)},[Data])
   return (
     <div style={{ overflow: "auto", width: "100%", backgroundColor: "var(--white-color)", height: "100vh", position: "relative" }}>
       <div style={{ height: "20vh", display: "flex" }}><h1 style={{ marginLeft: "5%" }}>Home V1.01</h1>

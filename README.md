@@ -30,6 +30,20 @@
 4. if add margin will cause overflowing of parrent [margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)    ->  If there is no border, padding, inline content, height, or min-height to separate a block's margin-top from its margin-bottom, then its top and bottom margins collapse.
 5. use padding for spacing and layout, margin for spaces between sibling elements [How to Avoid Margin Collapse](https://www.freecodecamp.org/news/what-is-margin-collapse-and-how-to-avoid-it/#:~:text=How%20to%20Avoid%20Margin%20Collapse,first%20for%20padding%20if%20possible.)
 
+
+## Define Global variable in DataContext.tsx
+    GlobalDatadef -> define all variable here
+    GlobalDatafunc -> define all variable setter function here
+    import {GlobalData, SetGlobalData} to file:
+    import {GlobalDatadef, GlobalDatafunc, GlobalData, SetGlobalData } from '../../assets/DataContext'
+    setup Context variables:
+    import {useContext} from 'react'
+    const Data = useContext<GlobalDatadef|null>(GlobalData)
+    const setData = useContext<GlobalDatafunc|null>(SetGlobalData)
+    ex:
+    Data    ->  view for all data, Data = {Ip, SearchQuery, Location...user info}
+    setData ->  set for all data.setData.setIp("112.333.666") -> update Ip(property) to "112.333.666" inside Data = {Ip:"112.333.666", ...}
+
 ## ReactFunction
 can be written with:
 1. export function Footer({style}: Style){
