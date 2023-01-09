@@ -1,7 +1,7 @@
 import React from 'react'
 
 export { Page }
-// this file ensure the div height and width matches to 100vh and 100 vw
+// this file ensure the div height and width matches to 100vh and 100%
 function Page() {
   return (
     <>
