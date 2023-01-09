@@ -211,7 +211,6 @@ export function Logo() {
     style,IpData
   }: Style){
   const style1:React.CSSProperties = {...style,width:"100%" };
-    console.log(IpData,"here is input")
   return (
     <div style={style1}>
       <div
