@@ -60,7 +60,7 @@ function Page() {
         width: "100%", minWidth: "200px", height: "70vh", minHeight: "200px"
       }}>
         <h2>為您找到相似的‘{Data?.SearchQuery || ""}’有</h2>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 20, paddingBottom: "12vh", paddingRight: "2vh" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 20, paddingBottom: "20vh", paddingRight: "2vh", overflow:"overlay" }}>
           {/* map response data here */}
           <Board1 style={{ flex: "1 1 auto" }} render='FoodPanda' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
           <Board1 style={{ flex: "1 1 auto" }} render='UberEat' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />

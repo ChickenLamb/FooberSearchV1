@@ -66,8 +66,6 @@ body {
   padding:0;
   /* make body font size to approx~ 12pt */
   font-size: 1.2rem;
-  /* overflow:overlay => make scrollbar absolute */
-  overflow:overlay;
 }
 button {
   background: transparent;
