@@ -1,38 +1,85 @@
-import React,{useState,useEffect, useContext} from 'react'
-import { Logo, Footer } from '../../assets/assets'
-import {type GlobalDatadef, type GlobalDatafunc, GlobalData, SetGlobalData } from '../../assets/DataContext'
-import {GetIpData} from '../../assets/othersFunction'
+import React, { useState, useEffect, useContext } from 'react'
+import { Logo, Footer, Board1, Board } from '../../assets/assets'
+import { type GlobalDatadef, type GlobalDatafunc, GlobalData, SetGlobalData } from '../../assets/DataContext'
+import { GetIpData, SearchEnter } from '../../assets/othersFunction'
 import { navigate } from "vite-plugin-ssr/client/router";
 export { Page }
-
+const FoodPandaPerData = {
+  food_name: "foodname01",
+  shop_name: "shopname01",
+  deliver_fee: 49,
+  deliver_time: 25,
+  price: 100,
+  url: "https://www.foodpanda.com.tw/en/restaurant/e5oc/qi-zhan-cha-san-zhong-zi-qiang-dian",
+}
+const UberEatPerData = {
+  food_name: "foodname02",
+  shop_name: "shopname02",
+  deliver_fee: 59,
+  deliver_time: 35,
+  price: 110,
+  url: "https://www.ubereats.com/tw-en/store/%E5%AF%A7%E5%A4%8F%E5%A4%9C%E5%B8%82-%E5%AF%A7%E5%A4%8F%E9%9A%A8%E7%B7%A3%E7%B4%A0%E9%A3%9F/-rt8e3bNUeOkQoFI23lsQg?diningMode=DELIVERY",
+}
 function Page() {
-  const Data = useContext<GlobalDatadef|null>(GlobalData)
-  const setData = useContext<GlobalDatafunc|null>(SetGlobalData)
+  const Data = useContext<GlobalDatadef | null>(GlobalData)
+  const setData = useContext<GlobalDatafunc | null>(SetGlobalData)
+  const [InputQuery, setInputQuery] = useState<string>("")
   if (typeof window !== 'undefined') {
     //here `window` is available
     var SearchURL = new URL(window.location.href);
   }
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     // get user ip
     GetIpData(setData?.SetIp);
     console.log()
     //init searchquery from url param
-    SearchURL.searchParams.get("q")!==null?setData?.SetSearchQuery(SearchURL.searchParams.get("q")||""):null
+    SearchURL.searchParams.get("q") !== null ? setData?.SetSearchQuery(SearchURL.searchParams.get("q") || "") : null
+    setInputQuery(SearchURL.searchParams.get("q") || "")
     // implement get request here
-    
-},[])
 
-useEffect(()=>{console.log(Data)},[Data])
+  }, [])
+ 
+
+  useEffect(() => { console.log(Data) }, [Data])
   return (
-    <div style={{ overflow: "auto", width: "100%", backgroundColor: "var(--white-color)", height: "100vh", position: "relative" }}>
-      <div style={{ height: "20vh", display: "flex" }}><h1 style={{ marginLeft: "5%" }}>Search V1.01</h1>
+    <div style={{
+      // overflow: "auto",
+      width: "100%", backgroundColor: "var(--white-color)", height: "100vh", position: "relative"
+    }}>
+      <div style={{ height: "20vh", display: "flex" }}>
+        <Logo style={{ width: "20vh" }} />
+        <div style={{ marginLeft: "5%" }}>
+          <h1 >Search V1.01</h1><br />
+          <input value={InputQuery} onKeyDown={e => SearchEnter(e, InputQuery)} onChange={e => { setInputQuery(e.target.value) }} style={{ marginRight: "0" }} type={"text"}></input></div>
         <a style={{ marginRight: "5%" }} href='assets'>go to assets</a></div>
-      <div style={{ width: "100%", minWidth: "200px", height: "40vh", minHeight: "200px" }}>
-      <h2 style={{paddingLeft:"5%" }}>為您找到相似的‘{Data?.SearchQuery||""}’有</h2>
+      <div style={{
+        paddingLeft: "5%",
+        // overflowY:"scroll",
+        width: "100%", minWidth: "200px", height: "70vh", minHeight: "200px"
+      }}>
+        <h2>為您找到相似的‘{Data?.SearchQuery || ""}’有</h2>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 20, paddingBottom: "12vh", paddingRight: "2vh" }}>
+          {/* map response data here */}
+          <Board1 style={{ flex: "1 1 auto" }} render='FoodPanda' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='UberEat' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='UberEat' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='FoodPanda' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='FoodPanda' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='UberEat' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='UberEat' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='FoodPanda' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='FoodPanda' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='UberEat' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='FoodPanda' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+          <Board1 style={{ flex: "1 1 auto" }} render='FoodPanda' FoodPandaPerData={FoodPandaPerData} UberEatPerData={UberEatPerData} />
+        </div>
+
       </div>
-      
-      <div style={{ height: "40vh", display: "flex", }}><Footer style={{ marginBottom: "0" }} IpData={Data?.Ip}/></div>
+
+      <div style={{ position: "fixed", width: "100%", height: "10vh", display: "flex", }}><Footer style={{ marginBottom: "0" }} IpData={Data?.Ip} /></div>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import React, { FC, ReactElement } from "react";
 import logo from "/assets/logo.svg";
 import styled from "./style-components-fix";
-import {GetIpData, IpData} from './othersFunction'
- type FoodPandaPerData = {
+import { GetIpData, IpData } from './othersFunction'
+type FoodPandaPerData = {
   food_name: string;
   shop_name: string;
   deliver_fee: number;
@@ -10,7 +10,7 @@ import {GetIpData, IpData} from './othersFunction'
   price: number;
   url: string;
 };
- type UberEatPerData = {
+type UberEatPerData = {
   food_name: string;
   shop_name: string;
   deliver_fee: number;
@@ -18,10 +18,13 @@ import {GetIpData, IpData} from './othersFunction'
   price: number;
   url: string;
 };
-type Style={style?:React.CSSProperties;IpData?:IpData; [key: string]: any};
- type BoardProps = {
+type Style = { style?: React.CSSProperties; IpData?: IpData;[key: string]: any };
+type BoardProps = {
   FoodPandaPerData: FoodPandaPerData;
   UberEatPerData: UberEatPerData;
+  render?: "FoodPanda" | "UberEat";
+  style?:React.CSSProperties;
+  [key: string]: any
 };
 //<a> with no styling = <A>
 export const A = styled.a`
@@ -39,6 +42,7 @@ export const A = styled.a`
 `;
 {/* <A> with styling */ }
 export const A1 = styled.a`
+  width:100%;
   color: var(--black-color);
   box-shadow: none;
   border: 2px solid var(--primary-color);
@@ -190,16 +194,19 @@ export function Fonts() {
     </div>
   );
 }
-export function Logo() {
+export function Logo({
+  style
+}: Style) {
   return (
     <>
-      <A href="/">
+      <A style={style} href="/">
         <img
           // style={{ display: "block" }}
           src={logo}
           height={"auto"}
           width={"100%"}
           alt="logo"
+
         />
       </A>
     </>
@@ -207,10 +214,10 @@ export function Logo() {
 }
 // can also be written with 
 // export const Footer :FC<Style> =({style:style}): ReactElement =>{
-  export function Footer({
-    style,IpData
-  }: Style){
-  const style1:React.CSSProperties = {...style,width:"100%" };
+export function Footer({
+  style, IpData
+}: Style) {
+  const style1: React.CSSProperties = { ...style, width: "100%" };
   return (
     <div style={style1}>
       <div
@@ -224,7 +231,7 @@ export function Logo() {
           display: "flex",
         }}
       >
-        <span style={{ flexBasis: "10%" }}>Footer</span>  <cite style={{ flexBasis: "40%" }}>{[IpData?.city,IpData?.state].filter(Boolean).join(", ")}</cite>
+        <span style={{ flexBasis: "10%" }}>Footer</span>  <cite style={{ flexBasis: "40%" }}>{[IpData?.city, IpData?.state].filter(Boolean).join(", ")}</cite>
 
         <a style={{ flexGrow: 1, margin: "0 10px" }} href="#about">
           About
@@ -242,6 +249,47 @@ export function Logo() {
     </div>
   );
 }
+export const Board1: FC<BoardProps> = ({
+  FoodPandaPerData: FoodPandaPerData,
+  UberEatPerData: UberEatPerData,
+  render,
+  style
+}): ReactElement => {
+  return (<div style={style}><A1 style={{ flexGrow: 1, flexShrink: 1 }} target={"_blank"} href={FoodPandaPerData.url}>
+    <div
+      style={{
+        borderRadius: "var(--default-radius)",
+        backgroundColor: "var(--white-color)",
+        width: "100%",
+        height: "25vh",
+        minWidth: "300px",
+        minHeight: "300px",
+        boxSizing: "border-box",
+        padding: "20px",
+      }}
+    >{render === "FoodPanda" && <><h2 style={{ color: "#CD0B66" }}>FoodPanda</h2>
+      <h3>{FoodPandaPerData.shop_name}</h3>
+      <ul>
+        <li>送餐時間：{FoodPandaPerData.deliver_time}分鐘</li>
+        <li>價格：    ${FoodPandaPerData.price}</li>
+        <li>外送費用：${FoodPandaPerData.deliver_fee}</li>
+      </ul>
+      <h1 style={{ textAlign: "right" }}>${FoodPandaPerData.price + FoodPandaPerData.deliver_fee}</h1></>}
+      {render === "UberEat" && <><h2 style={{
+        color: "#06C167",
+        textShadow: "1px 1px #142328"
+      }}>UberEat</h2>
+        <h3>{UberEatPerData.shop_name}</h3>
+        <ul>
+          <li>送餐時間：{UberEatPerData.deliver_time}分鐘</li>
+          <li>價格：    ${UberEatPerData.price}</li>
+          <li>外送費用：${UberEatPerData.deliver_fee}</li>
+        </ul>
+        <h1 style={{ textAlign: "right" }}>${UberEatPerData.price + UberEatPerData.deliver_fee}</h1></>}
+
+    </div>
+  </A1></div>)
+}
 export const Board: FC<BoardProps> = ({
   FoodPandaPerData: FoodPandaPerData,
   UberEatPerData: UberEatPerData,
@@ -256,9 +304,9 @@ export const Board: FC<BoardProps> = ({
         alignItems: "center",
         columnGap: "1.6rem",
         boxSizing: "border-box",
-        paddingLeft:"30px",
-        paddingRight:"230px",
-        margin:"30px 0"
+        // paddingLeft: "30px",
+        // paddingRight: "230px",
+        // margin: "30px 0",
       }}
     >
 
@@ -269,10 +317,11 @@ export const Board: FC<BoardProps> = ({
           borderRadius: "var(--default-radius)",
           backgroundColor: "var(--white-color)",
           height: "25vh",
-          minWidth: "300px",
+          width: "100%",
+          // minWidth: "300px",
           minHeight: "300px",
           boxSizing: "border-box",
-          padding: "20px",
+          // padding: "20px",
         }}
       >
         <h2 style={{ textAlign: "center" }}>FoodName</h2>
@@ -289,7 +338,7 @@ export const Board: FC<BoardProps> = ({
             backgroundColor: "var(--white-color)",
             width: "100%",
             height: "25vh",
-            minWidth: "300px",
+            // minWidth: "300px",
             minHeight: "300px",
             boxSizing: "border-box",
             padding: "20px",
@@ -312,7 +361,7 @@ export const Board: FC<BoardProps> = ({
             backgroundColor: "var(--white-color)",
             width: "100%",
             height: "25vh",
-            minWidth: "300px",
+            // minWidth: "300px",
             minHeight: "300px",
             boxSizing: "border-box",
             padding: "20px",
