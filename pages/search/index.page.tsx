@@ -16,7 +16,10 @@ function Page() {
   useEffect(()=>{
     // get user ip
     GetIpData(setData?.SetIp);
-    setData?.SetSearchQuery(SearchURL.searchParams.get("q")||"")
+    console.log()
+    //init searchquery from url param
+    SearchURL.searchParams.get("q")!==null?setData?.SetSearchQuery(SearchURL.searchParams.get("q")||""):null
+    // implement get request here
     
 },[])
 

@@ -15,8 +15,14 @@ function Page() {
     
 },[])
  function SearchClick(){
-  navigate("/search?q="+InputQuery)
+  InputQuery!==""?navigate("/search?q="+InputQuery):null
 }
+function SearchEnter(e:React.KeyboardEvent<HTMLInputElement>){
+  if(e.key === 'Enter') { 
+    SearchClick()
+   }
+}
+
 
 
 useEffect(()=>{console.log(Data)},[Data])
@@ -28,7 +34,7 @@ useEffect(()=>{console.log(Data)},[Data])
         <Logo />
       </div>
       <div style={{ padding: "30px 0", height: "10vh", bottom: "85px", display: "flex", flexWrap: "wrap", alignContent: "center", justifyContent: "center" }}>
-        <input value={InputQuery} onChange={e=>{setInputQuery(e.target.value)}} style={{ marginRight: "0" }} type={"text"}></input>
+        <input value={InputQuery} onKeyDown={e=>SearchEnter(e)} onChange={e=>{setInputQuery(e.target.value)}} style={{ marginRight: "0" }} type={"text"}></input>
         <button onClick={SearchClick} style={{ marginRight: "auto" }}>搜尋</button></div>
       <div style={{ height: "40vh", display: "flex", }}><Footer style={{ marginBottom: "0" }} IpData={Data?.Ip}/></div>
     </div>
