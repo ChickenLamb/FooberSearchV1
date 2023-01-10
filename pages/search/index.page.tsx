@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Logo, Footer, Board1, Board } from '../../assets/assets'
 import { type GlobalDatadef, type GlobalDatafunc, GlobalData, SetGlobalData } from '../../assets/DataContext'
-import { GetIpData, SearchEnter } from '../../assets/othersFunction'
+import { GetIpData, SearchClick, SearchEnter } from '../../assets/othersFunction'
 import { navigate } from "vite-plugin-ssr/client/router";
 export { Page }
 const FoodPandaPerData = {
@@ -43,19 +43,20 @@ function Page() {
 
   useEffect(() => { console.log(Data) }, [Data])
   return (
-    <div style={{
-      // overflow: "auto",
-      width: "100%", backgroundColor: "var(--white-color)", height: "100vh", position: "relative"
+    <div style={{width: "100%", backgroundColor: "var(--white-color)", height: "100vh", position: "relative"
     }}>
       <div style={{ height: "20vh", display: "flex" }}>
         <Logo style={{ width: "20vh" }} />
         <div style={{ marginLeft: "5%" }}>
           <h1 >Search V1.01</h1><br />
-          <input value={InputQuery} onKeyDown={e => SearchEnter(e, InputQuery)} onChange={e => { setInputQuery(e.target.value) }} style={{ marginRight: "0" }} type={"text"}></input></div>
+          <div style={{display:"flex", gap:5}}>
+          <input style={{flex:"1 1 70%"}} value={InputQuery} onKeyDown={e => SearchEnter(e, InputQuery)} onChange={e => { setInputQuery(e.target.value) }}  type={"text"}></input>
+          <button style={{flex:"1 1 30%"}} onClick={e=>SearchClick(InputQuery)} >搜尋</button>
+          </div>
+          </div>
         <a style={{ marginRight: "5%" }} href='assets'>go to assets</a></div>
       <div style={{
         paddingLeft: "5%",
-        // overflowY:"scroll",
         width: "100%", minWidth: "200px", height: "70vh", minHeight: "200px"
       }}>
         <h2>為您找到相似的‘{Data?.SearchQuery || ""}’有</h2>
