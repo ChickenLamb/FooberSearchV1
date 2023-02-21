@@ -324,7 +324,8 @@ export const Board: FC<BoardProps> = ({
           // padding: "20px",
         }}
       >
-        <h2 style={{ textAlign: "center" }}>FoodName</h2>
+        {/* <h2 style={{ textAlign: "center" }}>FoodName</h2> */}
+         <h2 style={{ textAlign: "center" }}>無刺虱目魚肉湯</h2>
         <h3 style={{ textAlign: "center" }}>這筆資料正確嗎？</h3>
         <div style={{ margin: "5px 0", width: "100%", display: "inline-flex", alignItems: "center", }}><div style={{ textAlign: "right", flexBasis: "72%", fontSize: "2rem" }}>11</div><button style={{ fontSize: "2rem" }}>🖒</button></div>
         <div style={{ margin: "5px 0", width: "100%", display: "inline-flex", alignItems: "center", }}><div style={{ textAlign: "right", flexBasis: "72%", fontSize: "2rem" }}> 3</div><button style={{ fontSize: "2rem" }}>🖓</button></div>
